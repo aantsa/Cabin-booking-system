@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Mokkivarausjarjestelma_Oma.jnlp">
+  <information>
+    <title>Mokkivarausjarjestelma_Oma</title>
+    <vendor>alisa</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Mokkivarausjarjestelma_Oma.jar" size="60769" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.19.jar" size="2356711" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Mokkivarausjarjestelma_Oma" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="mokkivarausjarjestelma.Mokkivarausjarjestelma"  name="Mokkivarausjarjestelma_Oma" />
+  <update check="always"/>
+</jnlp>

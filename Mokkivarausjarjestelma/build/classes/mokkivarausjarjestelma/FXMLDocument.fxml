@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mokkivarausjarjestelma.FXMLDocumentController">
+    <children>
+      <TabPane prefHeight="548.0" prefWidth="949.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Haku ja varaus">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="931.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="41.0" text="Toiminta-alue" />
+                        <Label layoutX="14.0" layoutY="73.0" text="KohdeID" />
+                        <Label layoutX="14.0" layoutY="106.0" text="Ajankohta" />
+                        <TextField layoutX="94.0" layoutY="37.0" />
+                        <TextField layoutX="94.0" layoutY="69.0" />
+                        <DatePicker layoutX="94.0" layoutY="102.0" prefHeight="25.0" prefWidth="63.0" />
+                        <DatePicker layoutX="180.0" layoutY="102.0" prefHeight="25.0" prefWidth="63.0" />
+                        <Label layoutX="166.0" layoutY="106.0" prefHeight="17.0" prefWidth="0.0" text="-" />
+                        <Label layoutX="14.0" layoutY="154.0" text="Majoittujien määrä" />
+                        <Button layoutX="16.0" layoutY="269.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="263.0" text="Hae ja varaa" />
+                        <ScrollPane layoutX="324.0" layoutY="15.0" prefHeight="199.0" prefWidth="623.0">
+                           <content>
+                              <AnchorPane prefHeight="356.0" prefWidth="612.0">
+                                 <children>
+                                    <TableView fx:id="tableviewEkasivu" layoutX="22.0" layoutY="14.0" onMouseClicked="#siirraValittuRiviClick" prefHeight="356.0" prefWidth="612.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="columnId" prefWidth="75.0" text="ID" />
+                                        <TableColumn fx:id="columnNimi" prefWidth="75.0" text="Nimi" />
+                                          <TableColumn fx:id="columnOsoite" prefWidth="75.0" text="Osoite" />
+                                          <TableColumn fx:id="columnPostinro" prefWidth="75.0" text="Postinro" />
+                                          <TableColumn fx:id="columnToiminta" prefWidth="117.0" text="Toiminta-alue" />
+                                          <TableColumn fx:id="columnHlo" prefWidth="97.0" text="Henkilömäärä" />
+                                          <TableColumn fx:id="columnHinta" prefWidth="97.0" text="Hinta" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane layoutX="324.0" layoutY="221.0" prefHeight="311.0" prefWidth="620.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="413.0" prefWidth="622.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="28.0" text="Kohteen nimi" />
+                                    <Label layoutX="16.0" layoutY="79.0" text="Toimipaikka" />
+                                    <Label layoutX="16.0" layoutY="45.0" text="Osoite" />
+                                    <Label fx:id="lblMokinNimi" layoutX="99.0" layoutY="28.0" text="Label" />
+                                    <Label fx:id="lblMokkiToimipaikka" layoutX="98.0" layoutY="79.0" text="Label" />
+                                    <Label fx:id="lblMokinOsoite" layoutX="98.0" layoutY="45.0" text="Label" />
+                                    <TextArea fx:id="taHakuJaVaraus" layoutX="270.0" layoutY="11.0" prefHeight="116.0" prefWidth="328.0" />
+                                    <Label layoutX="19.0" layoutY="181.0" prefHeight="17.0" prefWidth="151.0" text="VARAAJAN PERUSTIEDOT" />
+                                    <Label layoutX="16.0" layoutY="11.0" text="KohdeID" />
+                                    <Label fx:id="lblKohdeID" layoutX="98.0" layoutY="11.0" text="Label" />
+                                    <Label layoutX="21.0" layoutY="210.0" text="Etunimi" />
+                                    <Label layoutX="22.0" layoutY="241.0" text="Sukunimi" />
+                                    <TextField fx:id="tbEtunimiEtusivu" layoutX="115.0" layoutY="206.0" />
+                                    <TextField fx:id="tbSukunimiEtusivu" layoutX="115.0" layoutY="237.0" />
+                                    <Label layoutX="21.0" layoutY="378.0" text="AsiakasID" />
+                                    <Label layoutX="18.0" layoutY="151.0" text="Hinta" />
+                                    <Label fx:id="lblMokinHinta" layoutX="96.0" layoutY="151.0" text="Label" />
+                                    <TextField fx:id="tbEmailEtusivu" layoutX="117.0" layoutY="337.0" />
+                                    <Label layoutX="16.0" layoutY="62.0" text="Postinumero" />
+                                    <Label fx:id="lblPostinro" layoutX="98.0" layoutY="62.0" text="Label" />
+                                    <Label layoutX="320.0" layoutY="206.0" text="Lähiosoite" />
+                                    <Label layoutX="320.0" layoutY="242.0" text="Postinumero" />
+                                    <Label layoutX="21.0" layoutY="341.0" text="Email" />
+                                    <Label layoutX="21.0" layoutY="305.0" text="Puhelinnumero" />
+                                    <Label layoutX="15.0" layoutY="270.0" prefHeight="24.0" prefWidth="95.0" text="Hetu/Y-tunnus" />
+                                    <TextField fx:id="tbPuhnroEtusivu" layoutX="117.0" layoutY="301.0" />
+                                    <TextField fx:id="tbHetuEtusivu" layoutX="116.0" layoutY="270.0" />
+                                    <TextField fx:id="tbOsoiteEtusivu" layoutX="449.0" layoutY="202.0" />
+                                    <TextField fx:id="tbAsiakasIDEtusivu" layoutX="117.0" layoutY="374.0" />
+                                    <TextField fx:id="tbPostinroEtuSivu" layoutX="449.0" layoutY="236.0" />
+                                    <Button fx:id="btnRekisteroiAsiakas" layoutX="449.0" layoutY="270.0" mnemonicParsing="false" onMouseClicked="#rekisteroiAsiakas" prefHeight="25.0" prefWidth="149.0" text="Rekisteröi asiakas" />
+                                    <Button fx:id="btnVaraaHAKU" layoutX="454.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#varaa_Clicked" prefHeight="25.0" prefWidth="137.0" text="Varaa" />
+                                    <Label layoutX="308.0" layoutY="307.0" text="Varauksen ajankohta" />
+                                    <Label layoutX="308.0" layoutY="347.0" text="Varaus tehty" />
+                                    <DatePicker fx:id="dpVarauksenAlku" layoutX="437.0" layoutY="303.0" prefHeight="25.0" prefWidth="57.0" />
+                                    <Label layoutX="509.0" layoutY="307.0" text="-" />
+                                    <DatePicker fx:id="dpVarauksenLoppu" layoutX="526.0" layoutY="303.0" prefHeight="25.0" prefWidth="61.0" />
+                                    <DatePicker fx:id="dpVarauksenTekopvm" layoutX="436.0" layoutY="343.0" prefHeight="25.0" prefWidth="155.0" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <ChoiceBox fx:id="ComboBoxEkaPalvelut" layoutX="13.0" layoutY="224.0" prefWidth="150.0" />
+                        <Label layoutX="16.0" layoutY="207.0" text="Palvelut" />
+                        <ChoiceBox fx:id="ComboBoxEkaMajoittujat" layoutX="13.0" layoutY="171.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Varauksienhallinta">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="27.0" layoutY="25.0" text="HAE VARAUKSIA" />
+                        <Label layoutX="27.0" layoutY="42.0" text="JOLLAKIN SEURAVISTA:" />
+                        <Label layoutX="27.0" layoutY="90.0" text="Varausnumero" />
+                        <Label layoutX="27.0" layoutY="139.0" text="KohdeID" />
+                        <TextField layoutX="27.0" layoutY="107.0" />
+                        <TextField layoutX="27.0" layoutY="156.0" />
+                        <Label layoutX="27.0" layoutY="191.0" text="HETU/Y-TUN" />
+                        <TextField layoutX="27.0" layoutY="208.0" />
+                        <Button layoutX="27.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Hae" />
+                        <ScrollPane layoutX="330.0" layoutY="30.0" prefHeight="179.0" prefWidth="610.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="596.0">
+                                 <children>
+                                    <TableView fx:id="tableviewVarauksienH" layoutX="-1.0" onMouseClicked="#siirraValittuVarausMuokkaukseen" prefHeight="350.0" prefWidth="597.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="columnMokkiIDvar" prefWidth="136.0" text="KohdeID" />
+                                        <TableColumn fx:id="columnVarausnrovar" prefWidth="133.0" text="Varausnumero" />
+                                          <TableColumn fx:id="columnVaraajavar" prefWidth="146.0" text="Varauksen tekijä" />
+                                          <TableColumn fx:id="columnSumma" prefWidth="181.0" text="Summa" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <ScrollPane layoutX="328.0" layoutY="210.0" prefHeight="300.0" prefWidth="613.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="555.0" prefWidth="600.0">
+                                 <children>
+                                    <Label layoutX="9.0" layoutY="29.0" text="Kohde ID" />
+                                    <Label layoutX="9.0" layoutY="76.0" text="Katuosoite" />
+                                    <Label layoutX="9.0" layoutY="53.0" text="Kohteen nimi" />
+                                    <Label layoutX="6.0" layoutY="101.0" text="Postinumero" />
+                                    <Label layoutX="9.0" layoutY="125.0" text="Hinta" />
+                                    <Label fx:id="lblkohdeIDVAR" layoutX="106.0" layoutY="29.0" text="Label" />
+                                    <Label fx:id="lblKohteenNimiVAR" layoutX="106.0" layoutY="53.0" text="Label" />
+                                    <Label fx:id="lblKohteenOsoiteVAR" layoutX="106.0" layoutY="76.0" text="Label" />
+                                    <Label fx:id="lblPostinumeroVAR" layoutX="106.0" layoutY="101.0" text="Label" />
+                                    <Label fx:id="lblHintaVAR" layoutX="106.0" layoutY="125.0" text="Label" />
+                                    <Label layoutX="290.0" layoutY="195.0" text="VarausID" />
+                                    <Label layoutX="290.0" layoutY="233.0" text="Vuokrausaika" />
+                                    <Label layoutX="290.0" layoutY="267.0" text="Varaus pvm" />
+                                    <Label fx:id="lblVarausIDVAR" layoutX="386.0" layoutY="193.0" text="Label" />
+                                    <DatePicker fx:id="dpVuokrausAlkupvm" layoutX="380.0" layoutY="230.0" prefHeight="25.0" prefWidth="91.0" />
+                                    <Label layoutX="483.0" layoutY="233.0" text="-" />
+                                    <DatePicker fx:id="dpVuokrausLoppupvm" layoutX="494.0" layoutY="230.0" prefHeight="25.0" prefWidth="88.0" />
+                                    <DatePicker layoutX="378.0" layoutY="263.0" prefHeight="25.0" prefWidth="94.0" />
+                                    <Button fx:id="btnPeruutaVaraus" layoutX="297.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Peruuta varaus" />
+                                    <Button fx:id="btnLahetaTulostaLasku" layoutX="290.0" layoutY="473.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="Lähetä/Tulosta" />
+                                    <Label layoutX="5.0" layoutY="179.0" text="Etunimi" />
+                                    <Label layoutX="4.0" layoutY="210.0" text="Sukunimi" />
+                                    <Label layoutY="273.0" text="HETU/Y-TUN" />
+                                    <Label layoutX="8.0" layoutY="358.0" text="Lähiosoite" />
+                                    <Label layoutX="9.0" layoutY="389.0" text="Postinumero" />
+                                    <Label layoutX="11.0" layoutY="450.0" text="Puhelinnumero" />
+                                    <Label layoutX="11.0" layoutY="481.0" text="Sähköposti" />
+                                    <TextField layoutX="95.0" layoutY="269.0" />
+                                    <TextField layoutX="109.0" layoutY="353.0" />
+                                    <TextField fx:id="tbPostinumeroVarHallinta" layoutX="109.0" layoutY="385.0" />
+                                    <TextField layoutX="104.0" layoutY="446.0" />
+                                    <TextField layoutX="104.0" layoutY="477.0" />
+                                    <Label layoutX="3.0" layoutY="242.0" text="AsiakasID" />
+                                    <TextField fx:id="tb_asiakasIdVar" layoutX="95.0" layoutY="238.0" />
+                                    <Label layoutX="291.0" layoutY="419.0" text="LASKUTUS - valitse laskutustapa" />
+                                    <Label fx:id="lblEtunimiVAR" layoutX="105.0" layoutY="183.0" text="Label" />
+                                    <Label fx:id="lblSukunimiVAR" layoutX="105.0" layoutY="210.0" text="Label" />
+                                    <CheckBox fx:id="cbUlkomaalainenVaraaja" layoutX="95.0" layoutY="318.0" mnemonicParsing="false" text="VARAAJA ON ULKOMAILTA" />
+                                    <Label layoutX="8.0" layoutY="419.0" text="Postitoimipaikka" />
+                                    <TextField fx:id="tbPostitoimipaikkaVarHallinta" layoutX="109.0" layoutY="415.0" onMouseClicked="#autoFill" />
+                                    <CheckBox fx:id="cbPaperilasku" layoutX="292.0" layoutY="443.0" mnemonicParsing="false" text="Paperilasku" />
+                                    <CheckBox fx:id="cbSahkoinenLasku" layoutX="388.0" layoutY="443.0" mnemonicParsing="false" text="Sähköpostilasku" />
+                                    <Pane layoutX="5.0" layoutY="6.0" prefHeight="17.0" prefWidth="115.0" style="-fx-background-color: B4E4E3;">
+                                       <children>
+                                          <Label layoutX="10.0" text="KOHTEEN TIEDOT" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="2.0" layoutY="155.0" prefHeight="17.0" prefWidth="115.0" style="-fx-background-color: B4E4E3;">
+                                       <children>
+                                          <Label layoutX="7.0" text="VARAAJAN TIEDOT" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="286.0" layoutY="175.0" prefHeight="17.0" prefWidth="136.0" style="-fx-background-color: B4E4E3;">
+                                       <children>
+                                          <Label layoutX="13.0" text="VARAUKSEN TIEDOT" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <Label layoutX="27.0" layoutY="243.0" text="AsiakasID" />
+                        <TextField layoutX="27.0" layoutY="260.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Mökit/Palvelut">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="7.0" layoutY="7.0" prefHeight="519.0" prefWidth="949.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="Muokkaa mökkejä">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane layoutX="4.0" layoutY="14.0" prefHeight="469.0" prefWidth="386.0" />
+                                          <Label layoutX="184.0" layoutY="26.0" text="MÖKKI">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="Mtbkohdeid" layoutX="24.0" layoutY="96.0" />
+                                          <Label layoutX="213.0" layoutY="69.0" text="Postinumero" />
+                                          <TextField fx:id="Mtbpostinumero" layoutX="213.0" layoutY="99.0" />
+                                          <Label layoutX="24.0" layoutY="69.0" text="Mökki ID" />
+                                          <Label layoutX="24.0" layoutY="129.0" text="Mökin nimi" />
+                                          <TextField fx:id="Mtbmokinnimi" layoutX="24.0" layoutY="151.0" />
+                                          <Label layoutX="27.0" layoutY="189.0" text="Lähiosoite" />
+                                          <TextField fx:id="Mtbosoite" layoutX="24.0" layoutY="214.0" />
+                                          <TextField fx:id="Mtbhinta" layoutX="213.0" layoutY="151.0" />
+                                          <Label layoutX="211.0" layoutY="189.0" text="Kapasiteetti" />
+                                          <TextField fx:id="Mtbkapasiteetti" layoutX="213.0" layoutY="214.0" />
+                                          <Label layoutX="24.0" layoutY="322.0" text="Kuvaus" />
+                                          <TextArea fx:id="Mkuvaus" layoutX="24.0" layoutY="351.0" prefHeight="123.0" prefWidth="338.0" />
+                                          <Label layoutX="210.0" layoutY="252.0" text="Toiminta-alue" />
+                                          <TextField fx:id="Mtbtoimintaalue" layoutX="213.0" layoutY="281.0" />
+                                          <Label layoutX="27.0" layoutY="252.0" text="Omistajan ID" />
+                                          <TextField fx:id="Mtbomistajaid" layoutX="24.0" layoutY="281.0" />
+                                          <Label layoutX="213.0" layoutY="129.0" text="Hinta" />
+                                          <Pane layoutX="375.0" layoutY="9.0" prefHeight="478.0" prefWidth="562.0">
+                                             <children>
+                                                <Button fx:id="mokkilistanpaivitys" layoutX="325.0" layoutY="329.0" mnemonicParsing="false" onAction="#paivitamokkilista" prefHeight="25.0" prefWidth="142.0" text="Päivitä mökkilista" />
+                                                <Button fx:id="tyhjennamokkikentat" layoutX="132.0" layoutY="329.0" mnemonicParsing="false" onAction="#tyhjenna" prefHeight="25.0" prefWidth="122.0" text="Tyhjennä kentät" />
+                                             </children></Pane>
+                                          <ScrollPane layoutX="462.0" layoutY="17.0" prefHeight="233.0" prefWidth="475.0">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="471.0">
+                                                   <children>
+                                                      <TableView fx:id="textviewMuokkaamokkeja" layoutX="-5.0" onMouseClicked="#valittusiirto" prefHeight="272.0" prefWidth="481.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colummokki_id" prefWidth="92.0" text="ID" />
+                                                            <TableColumn fx:id="columkohteennimi" prefWidth="121.0" text="Nimi" />
+                                                            <TableColumn fx:id="columtoimipaikkaaa" prefWidth="114.0" text="Toimipaikka" />
+                                                            <TableColumn fx:id="columomistaja" prefWidth="149.0" text="Omistaja" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </ScrollPane>
+                                          <Label layoutX="462.0" layoutY="273.0" text="Kohteen nimi" />
+                                          <TextField fx:id="txt_KohteenNimi" layoutX="575.0" layoutY="269.0" prefHeight="26.0" prefWidth="167.0" />
+                                          <Button fx:id="btnHaeMokki" layoutX="760.0" layoutY="269.0" mnemonicParsing="false" onAction="#hae_mokki" prefHeight="25.0" prefWidth="149.0" text="Hae" />
+                                          <Button fx:id="tallennamuutokset" layoutX="600.0" layoutY="419.0" mnemonicParsing="false" onAction="#tallennamuutoksia" prefHeight="57.0" prefWidth="142.0" text="Tallenna muutokset" />
+                                          <Button fx:id="buttonpoistaomistaja" layoutX="773.0" layoutY="419.0" mnemonicParsing="false" onAction="#poista_omistaja" prefHeight="57.0" prefWidth="141.0" text="Poista" />
+                                          <Button fx:id="buttonlisaamokki" layoutX="431.0" layoutY="417.0" mnemonicParsing="false" onAction="#lisaamokki" prefHeight="61.0" prefWidth="141.0" text="Lisää mökki" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Muokkaa omistajaa">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="14.0" />
+                                          <Pane layoutX="7.0" layoutY="9.0" prefHeight="473.0" prefWidth="928.0" style="-fx-background-color: #0001;">
+                                             <children>
+                                                <Button fx:id="tyhjennaomistahakentat" layoutX="260.0" layoutY="346.0" mnemonicParsing="false" onAction="#tyhjennaomistaja" prefHeight="47.0" prefWidth="151.0" text="Tyhjennä kentät" />
+                                             </children></Pane>
+                                          <TableView fx:id="tvomistaja" layoutX="488.0" layoutY="31.0" onMouseClicked="#valitunrivinsiirto" prefHeight="381.0" prefWidth="331.0">
+                                             <columns>
+                                                <TableColumn fx:id="omistajacolumid" prefWidth="75.0" text="ID" />
+                                                <TableColumn fx:id="omistajacolumetunimi" prefWidth="114.39996337890625" text="Etunimi" />
+                                                <TableColumn fx:id="omistajacolumsukunimi" prefWidth="140.800048828125" text="Sukunimi" />
+                                             </columns>
+                                          </TableView>
+                                          <Label layoutX="138.0" layoutY="23.0" text="VALITSE MÖKKIIN OMISTAJA" />
+                                          <Button layoutX="606.0" layoutY="423.0" mnemonicParsing="false" onAction="#paivitalista" prefHeight="38.0" prefWidth="95.0" text="Päivitä lista" />
+                                          <Label layoutX="72.0" layoutY="53.0" text="Etunimi" />
+                                          <Label layoutX="267.0" layoutY="53.0" text="Sukunimi" />
+                                          <Label layoutX="67.0" layoutY="111.0" text="Lähiosoite" />
+                                          <Label layoutX="259.0" layoutY="111.0" text="Email" />
+                                          <Label layoutX="64.0" layoutY="171.0" text="Puhelinnumero" />
+                                          <TextField fx:id="tbetunimi" layoutX="66.0" layoutY="78.0" />
+                                          <TextField fx:id="tbsukunimi" layoutX="259.0" layoutY="78.0" />
+                                          <TextField fx:id="tbosoite" layoutX="64.0" layoutY="134.0" />
+                                          <TextField fx:id="tbemail" layoutX="259.0" layoutY="134.0" />
+                                          <TextField fx:id="tbpuhnro" layoutX="66.0" layoutY="197.0" />
+                                          <Button fx:id="lisaaomistaja" layoutX="268.0" layoutY="199.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="151.0" text="Lisää omistaja" />
+                                          <Button fx:id="buttontallennamuutokset" layoutX="268.0" layoutY="279.0" mnemonicParsing="false" onAction="#tallennamuutokset" prefHeight="47.0" prefWidth="151.0" text="Tallenna muutokset" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Palveluiden hallinta">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane layoutX="14.0" layoutY="16.0" prefHeight="469.0" prefWidth="407.0">
+                                             <children>
+                                                <Label layoutX="179.0" layoutY="153.0" prefHeight="17.0" prefWidth="106.0" text="Toiminta-alue ID" />
+                                                <TextField fx:id="txt_toimintaalueid" layoutX="180.0" layoutY="170.0" prefHeight="17.0" prefWidth="119.0" />
+                                                <TextField fx:id="txt_palvelunnimi" layoutX="95.0" layoutY="61.0" prefHeight="25.0" prefWidth="125.0" />
+                                                <Button fx:id="btn_lisaa" layoutX="183.0" layoutY="321.0" mnemonicParsing="false" onAction="#Lisaa_palvelu" prefHeight="25.0" prefWidth="121.0" text="Lisää" />
+                                                <Button fx:id="btnpostaPalvelut" layoutX="15.0" layoutY="426.0" mnemonicParsing="false" onAction="#poista_palvelu" prefHeight="37.0" prefWidth="67.0" text="Poista" />
+                                                <Label layoutX="16.0" layoutY="110.0" text="LISÄÄ PALVELU">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font></Label>
+                                                <Label layoutX="17.0" layoutY="404.0" text="Valitse haluamasi palvelu listalta ja klikkaa poista" />
+                                                <Label layoutX="16.0" layoutY="65.0" text="Palvelun nimi" />
+                                                <Label layoutX="20.0" layoutY="153.0" text="ID" />
+                                                <TextField fx:id="txt_id" layoutX="20.0" layoutY="170.0" prefHeight="25.0" prefWidth="128.0" />
+                                                <Label layoutX="11.0" layoutY="14.0" text="HAE PALVELU">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="17.0" layoutY="202.0" prefHeight="20.0" prefWidth="80.0" text="Nimi" />
+                                                <Label layoutX="180.0" layoutY="204.0" prefHeight="17.0" prefWidth="81.0" text="Tyyppi" />
+                                                <Label layoutX="17.0" layoutY="252.0" prefHeight="20.0" prefWidth="77.0" text="Kuvaus" />
+                                                <Label layoutX="186.0" layoutY="255.0" prefHeight="17.0" prefWidth="81.0" text="Hinta" />
+                                                <Label layoutX="17.0" layoutY="304.0" text="Alv %" />
+                                                <TextField fx:id="txt_nimi" layoutX="17.0" layoutY="220.0" prefHeight="25.0" prefWidth="128.0" />
+                                                <TextField fx:id="txt_tyyppi" layoutX="180.0" layoutY="220.0" prefHeight="25.0" prefWidth="118.0" />
+                                                <TextField fx:id="txt_kuvaus" layoutX="15.0" layoutY="272.0" prefHeight="25.0" prefWidth="130.0" />
+                                                <TextField fx:id="txt_hinta" layoutX="183.0" layoutY="272.0" prefHeight="25.0" prefWidth="117.0" />
+                                                <TextField fx:id="txt_alv" layoutX="15.0" layoutY="321.0" prefHeight="25.0" prefWidth="131.0" />
+                                                <Label layoutX="17.0" layoutY="361.0" text="POISTA PALVELU">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnHaeKaikkiPalvelut" layoutX="235.0" layoutY="61.0" mnemonicParsing="false" onAction="#hae_palvelu" text="Hae" />
+                                             </children>
+                                          </Pane>
+                                          <ScrollPane layoutX="363.0" layoutY="16.0" prefHeight="475.0" prefWidth="580.0">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="656.0" prefWidth="589.0">
+                                                   <children>
+                                                      <TableView fx:id="table_palvelut" layoutX="38.0" layoutY="22.0" onMouseClicked="#palveluidenValinta" prefHeight="656.0" prefWidth="589.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="col_id" prefWidth="87.0" text="ID" />
+                                                          <TableColumn fx:id="col_toimintaAlue" prefWidth="114.0" text="Toiminta-alue ID" />
+                                                            <TableColumn fx:id="col_nimi" text="Nimi" />
+                                                            <TableColumn fx:id="col_tyyppi" prefWidth="65.0" text="Tyyppi" />
+                                                            <TableColumn fx:id="col_kuvaus" text="Kuvaus" />
+                                                            <TableColumn fx:id="col_hinta" prefWidth="66.0" text="Hinta" />
+                                                            <TableColumn fx:id="col_alv" prefWidth="75.0" text="Alv 24%" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </ScrollPane>
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Asiakkaat">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="22.0" layoutY="90.0" text="Asiakas ID" />
+                        <TextField fx:id="txt_haeID" layoutX="21.0" layoutY="107.0" />
+                        <Button fx:id="btnHaeAsiakkaat" layoutX="22.0" layoutY="138.0" mnemonicParsing="false" onAction="#hae_Asiakkaat" prefHeight="25.0" prefWidth="147.0" text="Hae" />
+                        <ScrollPane layoutX="203.0" layoutY="50.0" prefHeight="200.0" prefWidth="732.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="302.0" prefWidth="717.0">
+                                 <children>
+                                    <ListView layoutY="-6.0" prefHeight="416.0" prefWidth="721.0" AnchorPane.bottomAnchor="-108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-6.0" />
+                                    <TableView fx:id="table_asiakas" layoutX="52.0" layoutY="25.0" onMouseClicked="#asiakastableClick" prefHeight="302.0" prefWidth="717.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_asiakasid" prefWidth="68.0" text="Asiakas ID" />
+                                        <TableColumn fx:id="col_etunimi" prefWidth="78.0" text="Etunimi" />
+                                          <TableColumn fx:id="col_sukunimi" prefWidth="68.0" text="Sukunimi" />
+                                          <TableColumn fx:id="col_hetu" prefWidth="97.0" text="HeTu/y-tunnus" />
+                                          <TableColumn fx:id="col_email" prefWidth="127.0" text="Email" />
+                                          <TableColumn fx:id="col_lahiosoite" minWidth="9.0" prefWidth="107.0" text="Lähiosoite" />
+                                          <TableColumn fx:id="col_postinumero" prefWidth="78.0" text="Postinumero" />
+                                          <TableColumn fx:id="col_puhelinnro" prefWidth="93.0" text="Puhelinnumero" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <Pane layoutX="203.0" layoutY="260.0" prefHeight="254.0" prefWidth="733.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="61.0" text="Etunimi" />
+                              <Label layoutX="14.0" layoutY="103.0" text="Sukunimi" />
+                              <Label layoutX="14.0" layoutY="150.0" text="Lähiosoite" />
+                              <Label layoutX="14.0" layoutY="198.0" text="Postinumero" />
+                              <TextField fx:id="txt_tallennaetunimi" layoutX="14.0" layoutY="78.0" />
+                              <TextField fx:id="txt_tallennasukunimi" layoutX="14.0" layoutY="120.0" />
+                              <TextField fx:id="txt_tallennalahiosoite" layoutX="14.0" layoutY="167.0" />
+                              <TextField fx:id="txt_tallennapostinumero" layoutX="14.0" layoutY="215.0" />
+                              <Label layoutX="198.0" layoutY="13.0" text="Email" />
+                              <TextField fx:id="txt_tallennaemail" layoutX="198.0" layoutY="30.0" />
+                              <Label layoutX="198.0" layoutY="55.0" text="HETU/Y-TUNNUS" />
+                              <TextField fx:id="txt_tallennahetu" layoutX="198.0" layoutY="72.0" />
+                              <Button fx:id="btntallennamuutokset" layoutX="198.0" layoutY="215.0" mnemonicParsing="false" onAction="#tallenna_muutokset" prefHeight="25.0" prefWidth="148.0" text="Tallenna muutokset" />
+                              <Label layoutX="198.0" layoutY="101.0" text="Puhelinnumero" />
+                              <TextField fx:id="txt_tallennapuhelinnro" layoutX="198.0" layoutY="118.0" />
+                              <Label layoutX="14.0" layoutY="14.0" text="AsiakasID" />
+                              <TextField fx:id="txt_tallennaasiakasid" layoutX="14.0" layoutY="33.0" />
+                              <Button fx:id="btnlisaaAsiakas" layoutX="198.0" layoutY="167.0" mnemonicParsing="false" onAction="#lisaa_asiakas" prefHeight="25.0" prefWidth="148.0" text="Lisää uusi asiakas" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="24.0" layoutY="50.0" text="Hae asiakas">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="185.0" text="Poista asiakas">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnpoistaAsiakas" layoutX="23.0" layoutY="225.0" mnemonicParsing="false" onAction="#poista_asiakas" prefHeight="25.0" prefWidth="147.0" text="Poista" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Raportointi">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="165.0" prefWidth="352.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="PALVELURAPORTTI" />
+                              <Label layoutX="14.0" layoutY="93.0" text="Ajanjakso" />
+                              <DatePicker fx:id="dpAlkuPalRaps" layoutX="101.0" layoutY="89.0" prefHeight="25.0" prefWidth="98.0" />
+                              <Label layoutX="213.0" layoutY="93.0" text="-" />
+                              <DatePicker fx:id="dpLoppuPalRaps" layoutX="230.0" layoutY="89.0" prefHeight="25.0" prefWidth="98.0" />
+                              <Label layoutX="14.0" layoutY="50.0" text="Toiminta-alue" />
+                              <Button fx:id="btnGeneroiPalRaps" layoutX="103.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#generoiPalveluRaportti" prefHeight="25.0" prefWidth="229.0" text="Generoi" />
+                              <ChoiceBox fx:id="choicePalRaps" layoutX="103.0" layoutY="46.0" prefHeight="25.0" prefWidth="226.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="14.0" layoutY="198.0" prefHeight="200.0" prefWidth="366.0">
+                           <children>
+                              <Label layoutX="12.0" layoutY="19.0" text="VARAUSRAPORTTI" />
+                              <Label layoutX="12.0" layoutY="98.0" text="Ajanjakso" />
+                              <Label layoutX="215.0" layoutY="98.0" text="-" />
+                              <DatePicker fx:id="dpLoppuMajRaps" layoutX="230.0" layoutY="94.0" prefHeight="25.0" prefWidth="98.0" />
+                              <Label layoutX="12.0" layoutY="55.0" text="Toiminta-alue" />
+                              <Button fx:id="btnGeneroiMajRaps" layoutX="99.0" layoutY="134.0" mnemonicParsing="false" onMouseClicked="#generoiMajoittumisRaportti" prefHeight="25.0" prefWidth="231.0" text="Generoi" />
+                              <DatePicker fx:id="dpAlkuMajRaps" layoutX="99.0" layoutY="94.0" prefHeight="25.0" prefWidth="97.0" />
+                              <ChoiceBox fx:id="choiceMajRaps" layoutX="99.0" layoutY="51.0" prefHeight="25.0" prefWidth="230.0" />
+                           </children>
+                        </Pane>
+                        <TextArea fx:id="taRaps" layoutX="436.0" layoutY="51.0" prefHeight="165.0" prefWidth="483.0" />
+                        <Button fx:id="btnLataaRaps" layoutX="795.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#lataaRaps" prefHeight="47.0" prefWidth="124.0" text="Lataa" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>
